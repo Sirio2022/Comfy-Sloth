@@ -12,7 +12,9 @@ const Sidebar = () => {
 
   return (
     <SidebarContainer>
-      <aside className={`${isSidebarOpen ? 'sidebar show-sidebar' : 'sidebar'}`}>
+      <aside
+        className={`${isSidebarOpen ? 'sidebar show-sidebar' : 'sidebar'}`}
+      >
         <div className="sidebar-header">
           <img src={logo} alt="logo" className="logo" />
           <button className="close-btn" type="button" onClick={closeSidebar}>
@@ -24,12 +26,16 @@ const Sidebar = () => {
           {links.map(({ id, text, url }) => {
             return (
               <li key={id}>
-                <Link to={url} onClick={closeSidebar} >{text}</Link>
+                <Link to={url} onClick={closeSidebar}>
+                  {text}
+                </Link>
               </li>
             );
           })}
           <li>
-            <Link to="/checkout" onClick={closeSidebar}>Checkout</Link>
+            <Link to="/checkout" onClick={closeSidebar}>
+              Checkout
+            </Link>
           </li>
         </ul>
         <CartButtons />
