@@ -16,7 +16,7 @@ import {
 } from '../actions';
 
 const initialState = {
-  isSideBarOpen: false,
+  isSidebarOpen: true,
 };
 
 const ProductsContext = React.createContext();
@@ -28,7 +28,7 @@ export const ProductsProvider = ({ children }) => {
     dispatch({ type: SIDEBAR_OPEN });
   };
 
-  const closeSideBar = () => {
+  const closeSidebar = () => {
     dispatch({ type: SIDEBAR_CLOSE });
   };
 
@@ -37,7 +37,7 @@ export const ProductsProvider = ({ children }) => {
       value={{
         ...state,
         openSidebar,
-        closeSideBar,
+        closeSidebar,
       }}
     >
       {children}
